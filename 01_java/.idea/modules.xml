@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/zsk-mobile-2024.iml" filepath="$PROJECT_DIR$/.idea/zsk-mobile-2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01_java.iml" filepath="$PROJECT_DIR$/01_java.iml" />
     </modules>
   </component>
 </project>
