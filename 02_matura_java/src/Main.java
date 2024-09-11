@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
@@ -19,7 +20,11 @@ public class Main {
             System.out.println("File not found");
         }
 
+        System.out.println("Zadanie 4.1:");
         System.out.println(zadanie41(lines));
+
+        System.out.println("Zadanie 4.2:");
+        zadanie42(lines).forEach(System.out::println);
     }
 
     private static long zadanie41(ArrayList<Integer> lines) {
@@ -30,5 +35,21 @@ public class Main {
         }
 
         return lines.stream().filter(lookingFor::contains).count();
+    }
+
+    private static List<Integer> zadanie42(ArrayList<Integer> lines) {
+        return lines.stream().filter((n) -> {
+            int l = 0, c = n;
+
+            for (int m = c % 10; c > 0; c = c / 10, m = c % 10) {
+                l += factorial(m);
+            }
+
+            return l == n;
+        }).toList();
+    }
+
+    private static int factorial(int n) {
+        return n <= 1 ? 1 : n * factorial(n - 1);
     }
 }
