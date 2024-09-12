@@ -49,7 +49,23 @@ public class Main {
         }).toList();
     }
 
+    private static ArrayList<Integer> zadanie43(ArrayList<Integer> lines) {
+        int cur_len = 0, cur_gcd = lines.get(0), max_len = 0, max_gcd = 0, max_index = 0;
+
+        for (int i = 1; i < lines.size(); i++) {
+            cur_gcd = gcd(cur_gcd, lines.get(i));
+
+
+        }
+
+        return new ArrayList<Integer>();
+    }
+
     private static int factorial(int n) {
         return n <= 1 ? 1 : n * factorial(n - 1);
+    }
+
+    private static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 }
