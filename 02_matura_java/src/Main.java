@@ -25,6 +25,10 @@ public class Main {
 
         System.out.println("Zadanie 4.2:");
         zadanie42(lines).forEach(System.out::println);
+
+        System.out.println("Zadanie 4.3:");
+        List<Integer> results43 = zadanie43(lines);
+        System.out.printf("pierwsza liczba ciągu: %d, długość %d, największy wspólny dzielnik %d%n", lines.get(results43.get(2)), results43.get(0), results43.get(1));
     }
 
     private static long zadanie41(ArrayList<Integer> lines) {
@@ -49,16 +53,24 @@ public class Main {
         }).toList();
     }
 
-    private static ArrayList<Integer> zadanie43(ArrayList<Integer> lines) {
-        int cur_len = 0, cur_gcd = lines.get(0), max_len = 0, max_gcd = 0, max_index = 0;
+    private static List<Integer> zadanie43(ArrayList<Integer> lines) {
+        int max_len = 0, max_gcd = 0, max_index = 0;
 
-        for (int i = 1; i < lines.size(); i++) {
-            cur_gcd = gcd(cur_gcd, lines.get(i));
+        for (int i = 0; i < lines.size(); i++) {
+            int cur_gcd = lines.get(i), j = i + 1;
 
+            for (; j < lines.size() && gcd(cur_gcd, lines.get(j)) > 1; j++) {
+                cur_gcd = gcd(cur_gcd, lines.get(j));
+            }
 
+            if (j - i > max_len) {
+                max_len = j - i;
+                max_gcd = cur_gcd;
+                max_index = i;
+            }
         }
 
-        return new ArrayList<Integer>();
+        return List.of(max_len, max_gcd, max_index);
     }
 
     private static int factorial(int n) {
