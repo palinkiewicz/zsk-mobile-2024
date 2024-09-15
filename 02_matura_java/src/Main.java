@@ -8,7 +8,7 @@ import static java.lang.Integer.parseInt;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> lines = new ArrayList<Integer>() {};
+        ArrayList<Integer> lines = new ArrayList<>();
 
         try {
             Scanner sc = new Scanner(new File("src/dane/przyklad.txt"));
