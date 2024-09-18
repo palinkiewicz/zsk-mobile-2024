@@ -1,17 +1,45 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        try {
+            FileWriter wyniki4 = new FileWriter("wyniki4.txt");
+            Scanner sc = new Scanner(new File("./src/main/java/org/example/data/przyklad.txt"));
+            ArrayList<Integer> lines = new ArrayList<>();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+            while (sc.hasNextLine()) {
+                lines.add(Integer.parseInt((sc.nextLine())));
+            }
+
+
+            wyniki4.write("Zadanie 4.1:\n");
+            ArrayList<Integer> z41 = zadanie41(lines);
+            wyniki4.write(z41.size() + " " + z41.get(0));
+
+            wyniki4.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        } catch (IOException e) {
+            System.out.println("I/O exception");
         }
+    }
+
+    private static ArrayList<Integer> zadanie41(ArrayList<Integer> lines) {
+        ArrayList<Integer> results = new ArrayList<>();
+
+        for (int num : lines) {
+            int num_copy = num;
+            int last = num % 10;
+
+            while (num / 10 > 0) num /= 10;
+
+            if (last == num) results.add(num_copy);
+        }
+
+        return results;
     }
 }
