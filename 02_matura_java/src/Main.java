@@ -11,7 +11,7 @@ public class Main {
         ArrayList<Integer> lines = new ArrayList<>();
 
         try {
-            Scanner sc = new Scanner(new File("src/dane/przyklad.txt"));
+            Scanner sc = new Scanner(new File("src/dane/liczby.txt"));
 
             while (sc.hasNextLine()) {
                 lines.add(parseInt(sc.nextLine()));
