@@ -1,7 +1,6 @@
 package org.example;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             FileWriter wyniki4 = new FileWriter("wyniki4.txt");
-            Scanner sc = new Scanner(new File("./src/main/java/org/example/data/przyklad.txt"));
+            Scanner sc = new Scanner(new File("./src/main/java/org/example/data/liczby.txt"));
             ArrayList<Integer> lines = new ArrayList<>();
 
             while (sc.hasNextLine()) {
@@ -25,6 +24,10 @@ public class Main {
             wyniki4.write("Zadanie 4.2:\n");
             List<Integer> z42 = zadanie42(lines);
             wyniki4.write(z42.get(0) + " " + z42.get(1) + " " + z42.get(2) + " " + z42.get(3) + "\n");
+
+            wyniki4.write("Zadanie 4.3:\n");
+            List<Integer> z43 = zadanie43(lines);
+            wyniki4.write("a) " + z43.get(0) + "\nb) " + z43.get(1) + "\n");
 
             wyniki4.close();
         } catch (FileNotFoundException e) {
@@ -83,5 +86,43 @@ public class Main {
         }
 
         return List.of(maxNum, maxFactorials, maxDistinctNum, maxDistinctFactorials);
+    }
+
+    private static List<Integer> zadanie43(ArrayList<Integer> lines) {
+        int triCount = 0;
+        int pentCount = 0;
+
+        try {
+            FileWriter resultsFile = new FileWriter("trojki.txt");
+
+            for (int x : lines) {
+                for (int y : lines) {
+                    if (x == y || x > y || y % x != 0) continue;
+
+                    for (int z : lines) {
+                        if (y == z || y > z || z % y != 0) continue;
+
+                        triCount++;
+
+                        resultsFile.write(x + " " + y + " " + z + "\n");
+
+                        for (int p : lines) {
+                            if (z == p || z > p || p % z != 0) continue;
+
+                            for (int q : lines) {
+                                if (p == q || p > q || q % p != 0) continue;
+                                pentCount++;
+                            }
+                        }
+                    }
+                }
+            }
+
+            resultsFile.close();
+        } catch (IOException e) {
+            System.out.println("I/O exception");
+        }
+
+        return List.of(triCount, pentCount);
     }
 }
