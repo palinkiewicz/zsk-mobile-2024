@@ -4,6 +4,9 @@
     <string name="email_placeholder">Podaj e-mail:</string>
     <string name="password_placeholder">Podaj hasło:</string>
     <string name="confirm_password_placeholder">Powtórz hasło:</string>
+    <string name="email_hint">Pole do podania e-mail</string>
+    <string name="password_hint">Pole do podania hasła</string>
+    <string name="confirm_password_hint">Pole do powtórzenia hasła</string>
     <string name="submit_button">Zatwierdź</string>
     <string name="welcome">Witaj ewa@poczta.pl</string>
 </resources>
