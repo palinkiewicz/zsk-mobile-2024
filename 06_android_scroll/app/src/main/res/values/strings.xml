@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Scrollable</string>
+    <string name="login_header">Login</string>
+    <string name="first_name_field">First name</string>
+    <string name="last_name_field">Last name</string>
+    <string name="age_field">Age</string>
+    <string name="email_field">E-mail</string>
+    <string name="password_field">Password</string>
+    <string name="confirm_password_field">Confirm password</string>
+    <string name="policy_field">Hereby I accept the privacy policy</string>
+    <string name="submit_button">Submit</string>
+</resources>
