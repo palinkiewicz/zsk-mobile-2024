@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GreenText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#009900</item>
+    </style>
+    <style name="GreenText.Large">
+        <item name="android:textSize">32sp</item>
+    </style>
+    <style name="GreenText.Tiny">
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="PinkBackground">
+        <item name="android:background">#FFDCDC</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="PinkButton" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">#FFC0CB</item>
+        <item name="android:textColor">#A020F0</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="PurpleText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#A020F0</item>
+    </style>
+    <style name="MediumSpacing">
+        <item name="android:layout_height">32dp</item>
+    </style>
+</resources>
