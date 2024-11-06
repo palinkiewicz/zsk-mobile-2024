@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Android Themes</string>
+    <string name="scroll_hint">Scroll</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="mother_name">Mother`s name</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="pizza">I like pizza</string>
+    <string name="login">Log in</string>
+    <string name="send_love">Send love</string>
+</resources>
