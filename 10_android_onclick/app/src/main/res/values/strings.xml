@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OnClick</string>
+    <string name="edit_field_1">Pole edycyjne 1</string>
+    <string name="edit_field_2">Pole edycyjne 2</string>
+    <string name="button_1">Przycisk 1</string>
+    <string name="button_2">Przycisk 2</string>
+    <string name="text_view_1">Tutaj będzie tekst</string>
+</resources>
