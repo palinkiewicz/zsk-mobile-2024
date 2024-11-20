@@ -26,15 +26,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Part 1
-        Button button1 = findViewById(R.id.button);
-        EditText edit1 = findViewById(R.id.input1);
-        TextView textview1 = findViewById(R.id.textView2);
-
-        button1.setOnClickListener(v -> {
-            textview1.setText(edit1.getText().toString());
-        });
-
         // Part 2
         Button button2 = findViewById(R.id.button2);
         EditText edit2 = findViewById(R.id.input2);
@@ -42,5 +33,13 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(v -> {
             Toast.makeText(this, edit2.getText().toString(), Toast.LENGTH_SHORT).show();
         });
+    }
+
+    // Part 1
+    public void btnOnClick(View v) {
+        EditText edit1 = findViewById(R.id.input1);
+        TextView textview1 = findViewById(R.id.textView2);
+
+        textview1.setText(edit1.getText().toString());
     }
 }
