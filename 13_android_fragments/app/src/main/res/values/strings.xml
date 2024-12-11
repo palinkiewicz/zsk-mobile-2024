@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android Fragments</string>
+    <string name="email_label">E-mail</string>
+    <string name="name_label">Imię</string>
+    <string name="surname_label">Nazwisko</string>
+    <string name="login_button">Zapisz się</string>
+    <string name="logout_button">Ja uciekam</string>
+</resources>
