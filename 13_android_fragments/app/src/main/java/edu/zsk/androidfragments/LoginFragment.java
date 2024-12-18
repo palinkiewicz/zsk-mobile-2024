@@ -22,10 +22,16 @@ public class LoginFragment extends Fragment {
             String name = ((EditText) view.findViewById(R.id.name)).getText().toString();
             String surname = ((EditText) view.findViewById(R.id.surname)).getText().toString();
 
-            if (!email.isEmpty() && !name.isEmpty() && !surname.isEmpty() && !email.matches("^[\\w-.]+@([\\w-]+.)+[\\w-]{2,4}$")) {
+            if (!email.isEmpty() && !name.isEmpty() && !surname.isEmpty() && email.matches("^[\\w-.]+@([\\w-]+.)+[\\w-]{2,4}$")) {
+                Bundle bundle = new Bundle();
+                bundle.putString("email", email);
+                bundle.putString("name", name);
+                bundle.putString("surname", surname);
+
                 getParentFragmentManager().beginTransaction()
                         .setReorderingAllowed(true)
-                        .replace(R.id.fragment_container, LoggedFragment.class, null)
+                        .replace(R.id.fragment_container, LoggedFragment.class, bundle)
+                        .addToBackStack(null)
                         .commit();
             }
         });
