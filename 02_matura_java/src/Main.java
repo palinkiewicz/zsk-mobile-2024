@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,24 +13,35 @@ public class Main {
         ArrayList<Integer> lines = new ArrayList<>();
 
         try {
+            FileWriter wyniki4 = new FileWriter("wyniki4.txt");
             Scanner sc = new Scanner(new File("src/dane/liczby.txt"));
 
             while (sc.hasNextLine()) {
                 lines.add(parseInt(sc.nextLine()));
             }
+
+            wyniki4.write("Zadanie 4.1:\n");
+            wyniki4.write(zadanie41(lines) + "\n");
+
+            wyniki4.write("Zadanie 4.2:\n");
+            zadanie42(lines).forEach(l -> {
+                try {
+                    wyniki4.write(l + "\n");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+
+            wyniki4.write("Zadanie 4.3:\n");
+            List<Integer> results43 = zadanie43(lines);
+            wyniki4.write(String.format("pierwsza liczba ciągu: %d, długość %d, największy wspólny dzielnik %d%n", lines.get(results43.get(2)), results43.get(0), results43.get(1)));
+
+            wyniki4.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-
-        System.out.println("Zadanie 4.1:");
-        System.out.println(zadanie41(lines));
-
-        System.out.println("Zadanie 4.2:");
-        zadanie42(lines).forEach(System.out::println);
-
-        System.out.println("Zadanie 4.3:");
-        List<Integer> results43 = zadanie43(lines);
-        System.out.printf("pierwsza liczba ciągu: %d, długość %d, największy wspólny dzielnik %d%n", lines.get(results43.get(2)), results43.get(0), results43.get(1));
     }
 
     private static long zadanie41(ArrayList<Integer> lines) {
