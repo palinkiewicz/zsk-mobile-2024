@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">14_android_notifs</string>
+    <string name="btn1">Przycisk 1</string>
+    <string name="btn2">Przycisk 2</string>
+    <string name="btn3">Przycisk 3</string>
+    <string name="btn4">Przycisk 4</string>
+    <string name="btn1_notif">Kliknięto przycisk 1!</string>
+    <string name="btn2_notif">Kliknięto przycisk 2!</string>
+    <string name="random_long_text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porttitor elementum augue, vel ullamcorper nisl mattis non. Integer vestibulum tellus et nulla sagittis, sed finibus est lobortis. In fringilla quis lacus in mollis. Vestibulum lobortis placerat scelerisque. In et semper nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis diam malesuada, aliquet magna eleifend, lacinia diam.
+
+Donec consectetur, dolor ut bibendum posuere, eros augue vehicula risus, at sagittis sem justo in mauris. Aliquam orci nisl, luctus aliquet faucibus in, tempor sit amet urna. Fusce pharetra mattis purus. Nullam vitae purus sit amet ante semper convallis. Quisque finibus tellus sit amet turpis elementum, vitae commodo massa bibendum. Phasellus lobortis vestibulum sapien nec sodales. Vestibulum aliquet ante a commodo maximus.
+
+Integer neque lacus, euismod consequat risus ac, finibus eleifend mi. Suspendisse nisl tortor, semper eget est quis, finibus molestie enim. Nulla vitae est ullamcorper, fermentum diam eleifend, tempus mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis egestas tortor, mattis consequat ante egestas consectetur. Donec sit amet enim et dolor mollis dictum vitae at eros. Duis dictum orci sit amet ultricies dapibus. Curabitur tincidunt lectus enim, ac interdum nibh maximus nec.
+
+Fusce turpis lorem, fringilla non fermentum eu, commodo sed velit. Morbi eu urna nibh. Donec eget felis et mi vehicula suscipit. Nullam porta nisi sed tempor fermentum. Suspendisse ac venenatis diam, eget eleifend mauris. Cras eget risus eget risus gravida auctor sit amet id justo. Donec pretium odio venenatis, eleifend lectus eu, rhoncus tortor. Sed rhoncus velit eu orci pharetra, ac venenatis orci viverra. Donec luctus commodo est at semper. Pellentesque congue efficitur odio at pharetra. Integer diam tellus, scelerisque id tortor ut, sodales molestie diam. Proin congue non est id pretium. Maecenas ut sapien eu quam semper vehicula ac sed velit. Maecenas quam risus, condimentum in blandit eget, ornare eget odio. Curabitur nec eros pharetra nisl efficitur finibus. Mauris auctor ullamcorper est, ut rutrum lacus facilisis in.
+
+Praesent non dui non leo sagittis pulvinar sit amet non ex. Nam lacinia dictum tortor sed tristique. Quisque fermentum lorem ex, eget vulputate sem rhoncus et. Donec lacinia leo dui, sed tempus nisl suscipit nec. Nullam varius varius cursus. In hendrerit rhoncus tellus, sed lacinia nisi. Maecenas sit amet tempus risus. Suspendisse eu nibh a diam efficitur tincidunt eu vitae arcu. Vestibulum ornare justo ut quam cursus gravida. Aenean euismod, nisi id luctus pellentesque, quam magna pulvinar nisl, consectetur iaculis sem lacus a ante. Nunc arcu magna, sodales eget vestibulum ut, mattis a sem. Phasellus iaculis pretium magna.
+    </string>
+</resources>
