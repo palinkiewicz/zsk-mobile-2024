@@ -16,7 +16,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    final String CHANNEL_ID = "AND_NOT_14_L";
+    final String CHANNEL_ID_HIGH = "AND_NOT_14_HIGH";
+    final String CHANNEL_ID_LOW = "AND_NOT_14_LOW";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,20 +30,22 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        createNotificationChannel();
+        createNotificationChannel(CHANNEL_ID_HIGH, NotificationManager.IMPORTANCE_HIGH);
+        createNotificationChannel(CHANNEL_ID_LOW, NotificationManager.IMPORTANCE_LOW);
 
-        Button btn1 = (Button) findViewById(R.id.button1);
+        Button btn1 = findViewById(R.id.button1);
 
         btn1.setOnClickListener(l -> {
             Intent intent = new Intent(this, OneActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID_HIGH)
                     .setSmallIcon(R.drawable.ic_launcher_background)
                     .setContentTitle(getString(R.string.btn1))
                     .setContentText(getString(R.string.btn1_notif))
-                    .setPriority(NotificationCompat.PRIORITY_HIGH)
-                    .setContentIntent(pendingIntent);
+                    .setPriority(NotificationCompat.PRIORITY_MAX)
+                    .setContentIntent(pendingIntent)
+                    .setAutoCancel(true);
 
             NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -51,18 +54,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btn2 = (Button) findViewById(R.id.button2);
+        Button btn2 = findViewById(R.id.button2);
 
         btn2.setOnClickListener(l -> {
             Intent intent = new Intent(this, TwoActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID_LOW)
                     .setSmallIcon(R.drawable.ic_launcher_background)
                     .setContentTitle(getString(R.string.btn2))
                     .setContentText(getString(R.string.btn2_notif))
                     .setPriority(NotificationCompat.PRIORITY_LOW)
-                    .setContentIntent(pendingIntent);
+                    .setContentIntent(pendingIntent)
+                    .setAutoCancel(true);
 
             NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -72,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void createNotificationChannel() {
+    private void createNotificationChannel(String channelId, int priority) {
         NotificationChannel nc = new NotificationChannel(
-                CHANNEL_ID,
+                channelId,
                 getString(R.string.app_name),
-                NotificationManager.IMPORTANCE_DEFAULT
+                priority
         );
 
         NotificationManager nm = getSystemService(NotificationManager.class);
