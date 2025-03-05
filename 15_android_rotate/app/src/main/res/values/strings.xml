@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">androt</string>
+    <string name="name">Imię</string>
+    <string name="email">Adres e-mail</string>
+    <string name="btn">zwiększ liczbę</string>
+    <string name="reminder">Najpierw uzupełnij swoje dane!</string>
+    <string name="clicked">Klinięto przycisk %1$d razy!</string>
+    <string name="welcome">Witaj, %1$s! Twój adres email to: %2$s</string>
+</resources>
