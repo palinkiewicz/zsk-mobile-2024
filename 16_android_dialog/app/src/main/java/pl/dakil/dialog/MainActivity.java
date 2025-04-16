@@ -24,6 +24,24 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        int[] drawableResIds = {
+                R.drawable.alex_robertson_tld1ui2awjg_unsplash,
+                R.drawable.anita_austvika_flpb5nm46ta_unsplash,
+                R.drawable.arpit_rastogi_elytldkpkxw_unsplash,
+                R.drawable.brian_mcmahon_kf3zlku4npe_unsplash,
+                R.drawable.declan_sun_zuog4mkdgbe_unsplash,
+                R.drawable.dmitry_voronov_9iooqzrdxag_unsplash,
+                R.drawable.ingmar_h_5jmcv5aacp0_unsplash,
+                R.drawable.joseph_corl_bmcmuip50qw_unsplash,
+                R.drawable.joseph_corl_vnnlb1m78w4_unsplash,
+                R.drawable.khanh_ho_ayis5ohztkg_unsplash,
+                R.drawable.logan_weaver_lgnwvr_3otma1wbakk_unsplash,
+                R.drawable.mos_design_pgrvzgdhfr4_unsplash,
+                R.drawable.saeed_ghavam_shahidi_i38wgx6rrn0_unsplash,
+                R.drawable.victor_hugo_jeqt4eacd5c_unsplash,
+                R.drawable.negley_stockman_ue43ieia4yo_unsplash
+        };
+
         int[] imageViewIds = {
                 R.id.imageView1,
                 R.id.imageView2,
@@ -42,17 +60,17 @@ public class MainActivity extends AppCompatActivity {
                 R.id.imageView15
         };
 
-        for (int id : imageViewIds) {
-            ImageView imageView = findViewById(id);
+        for (int i = 0; i < imageViewIds.length; i++) {
+            ImageView imageView = findViewById(imageViewIds[i]);
+            imageView.setImageResource(drawableResIds[i]);
+            imageView.setTag(drawableResIds[i]);
             imageView.setOnClickListener(this::showImageDialog);
         }
     }
 
     private void showImageDialog(View view) {
-        ImageView clickedImageView = (ImageView) view;
-        Drawable imageDrawable = clickedImageView.getDrawable();
-
-        ImageDialogFragment dialogFragment = ImageDialogFragment.newInstance(imageDrawable);
+        int imageResId = (int) view.getTag();
+        ImageDialogFragment dialogFragment = ImageDialogFragment.newInstance(imageResId);
         dialogFragment.show(getSupportFragmentManager(), "imageDialog");
     }
 }

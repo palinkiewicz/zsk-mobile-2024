@@ -4,11 +4,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 public class ImageDialogFragment extends DialogFragment {
