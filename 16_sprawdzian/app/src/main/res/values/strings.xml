@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Zadanie Podsumowujące Adam Palinkiewicz</string>
+    <string name="login_header">Logowanie</string>
+    <string name="email">Adres e-mail</string>
+    <string name="password">Hasło</string>
+    <string name="login">Zaloguj się</string>
+    <string name="fragments_play">Zabawa fragmentami</string>
+    <string name="change_fragment">Zmień fragment</string>
+    <string name="show_notification">Pokaż powiadomienie</string>
+    <string name="display_list">Wyświetlanie listy</string>
+    <string name="fragment_1">Fragment 1</string>
+    <string name="fragment_2">Fragment 2</string>
+    <string name="open_dialog">Otwórz okno dialogowe</string>
+    <string name="android_1">Android 1</string>
+    <string name="android_2">Android 2</string>
+    <string name="android_3">Android 3</string>
+    <string name="android_4">Android 4</string>
+    <string name="error_input_all">Wypełnij wszystkie pola!</string>
+    <string name="error_incorrect">Niepoprawne dane logowania!</string>
+    <string name="success_logged">Zalogowano!</string>
+    <string name="error_no_permissions">Brak zgody na wysyłanie powiadomień!</string>
+    <string name="notification_title">Powiadomienie</string>
+    <string name="notification_content">Wiadomość powiadomienia</string>
+    <string name="dialog_title">Okno dialogowe</string>
+    <string name="dialog_content">Treść wiadomości</string>
+</resources>
